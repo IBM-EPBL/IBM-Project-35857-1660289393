@@ -1,0 +1,31 @@
+python code for led blinking in raspberry pi:
+
+import machine
+import time pin = machine.Pin(0, machine.Pin.OUT)
+for i in range(10):
+     pin.on()
+     time.sleep(0.5)
+     pin.off()
+     time.sleep(0.5)
+
+
+python code for traffic light in raspberry pi:
+
+from gpiozero import Button, TrafficLights, Buzzer    
+from time import sleep    
+    
+buzzer = Buzzer(15)    
+button = Button(21)    
+lights = TrafficLights(25, 8, 7)    
+    
+while True:    
+           button.wait_for_press()   
+           buzzer.on()   
+           light.green.on()    
+           sleep(1)    
+           lights.amber.on()    
+           sleep(1)    
+           lights.red.on()    
+           sleep(1)    
+           lights.off()   
+           buzzer.off()
